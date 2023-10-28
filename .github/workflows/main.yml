@@ -1,0 +1,35 @@
+# Name of workflow to be displyed on Github Console
+name: Build and Test Go Application
+
+# Triggers the workflow on separate events 
+on:
+  push:
+    # Trigger the worflow on push event for all branches
+    branches:
+      -  '**'  
+  pull_request:
+    # Trigger the worflow on pull request event for main branch
+    branches:
+      - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  my_first_job:
+    name: My first job
+# runs_on specifies the type of machine to run the job on.
+# The machine can be either a GitHub-hosted runner or a self-hosted # runner.    
+    runs_on: ubuntu-latest
+# steps can run commands, setup tasks or run an action   
+  steps:
+     - name: Check out repository
+# uses selects an action to run as part of a step in your job.
+# action/checkout@v2 checks-out your repo under github workspace.
+       uses: actions/checkout@v2
+my_second_job:
+    name: My second job
+runs_on: ubuntu-latest
+   
+    steps:
+      - id: step2
+# run runs command-line programs using the operating system's shell.          
+        run: echo "My Second Job"
