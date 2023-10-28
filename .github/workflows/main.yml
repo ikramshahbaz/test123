@@ -27,9 +27,3 @@ jobs:
        uses: actions/checkout@v2
 my_second_job:
     name: My second job
-runs_on: ubuntu-latest
-   
-    steps:
-      - id: step2
-# run runs command-line programs using the operating system's shell.          
-        run: echo "My Second Job"
