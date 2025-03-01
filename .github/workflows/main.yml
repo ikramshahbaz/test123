@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write  # This allows push access to the repository
+  actions: read   # Optional: needed to view workflows and other metadata
 jobs:
   tag:
     runs-on: ubuntu-latest
